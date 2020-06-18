@@ -82,7 +82,43 @@ const  routePath = {
       data: users
     }
     res.status(200).json(statusUser.RESULT)
+  },
+
+  /**
+   * @param 根据id查询用户信息
+   */
+  queryUserInfo: function (req, res) {
+    let bool = false
+    const userInfo =  users.filter(item => {
+      return item.id == req.query.id
+    })
+    if (userInfo.length > 0) {
+      statusUser.RESULT.data = {
+        success: true,
+        msg: '获取用户信息成功',
+        data: [...userInfo]
+      }
+      res.status(200).json(statusUser.RESULT)
+    } else {
+      statusUser.RESULT.data = {
+        success: true,
+        msg: '该用户不存在'
+      }
+    }
+  },
+  /**
+   * @param 修改用户信息
+   */
+  updateUserInfo: function (req,res) {
+    users.forEach((o) => {
+      if (o.id == req.body.id) {
+        o.title = req.body.title;
+        o.publish = req.body.publish;
+        o.publishTime = req.body.publishTime;
+      }
+    })
   }
+
 }
 
 export default routePath
