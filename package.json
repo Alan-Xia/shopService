@@ -1,0 +1,27 @@
+{
+  "name": "shopService",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node service.js",
+    "dev": "nodemon service.js --exec babel-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "nodemon": "^2.0.4",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-preset-env": "^1.7.0"
+  }
+}
