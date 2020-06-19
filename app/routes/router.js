@@ -3,7 +3,7 @@
 import express from 'express'
 import userCtrl from '../controller/user.info'
 import statusUser from '../utils/status.user'
-let router = express()
+let router = express.Router()
 
 export default function (app) {
   // 登录
